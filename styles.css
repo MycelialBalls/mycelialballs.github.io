@@ -1,34 +1,74 @@
-.minibox {
-    padding-top: 4px;
-    padding-bottom: 4px;
-    width:100%;
-    background-color: white;
-}
-
-a {
-    color: #000
+html {
+    background-color: rgb(0, 0, 0);
 }
 
 body {
-    margin: 0;
-    padding: 0;
     background-color: rgb(0, 0, 0);
-    font-family: sans-serif;
+    width: 800px;
+    margin: auto;
     color: rgb(0, 0, 0);
-    text-shadow:
-    1px 1px 0 #ffffff,
-    0px 1px 0 #ffffff,
-    -1px 1px 0 #ffffff,
-    
-    -1px 0px 0 #ffffff,
-    1px -1px 0 #ffffff,
-    0px -1px 0 #ffffff,
-    -1px -1px 0 #ffffff;
+    font-family: sans-serif;
 }
 
 h1 {
-    background-color: white;
-    padding-top: 4px;
-    padding-bottom: 4px;
+  padding-top: 24px;
+  color: white;
     text-align: center;
+    background-image: linear-gradient(180deg,#646464 0%, #000000 100%);
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "menu content"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
+  gap: 10px;
+  border: 4px;
+  background-image: url('diamond-pattern.png');
+  animation: bgScroll 1s linear infinite;
+  padding: 10px;
+}
+.container div {
+  color: rgb(0, 0, 0);
+  padding: 32px;
+  background-image: linear-gradient(180deg,#e1e1e19f 0%, #ffffffde 100%);
+  border-radius: 24px;
+}
+
+@keyframes bgScroll {
+  0% {
+    background-position : 64px 0px
+  }
+  100% {
+    background-position : 0px -64px
+  }
+}
+.container div.header {
+  grid-area: header;
+  text-align: center;
+}
+.container div.content {
+  grid-area: content;
+  min-height: 740px;
+}
+.container div.footer {
+  grid-area: footer;
+  text-align: center;
+}
+
+.container span.baob {
+  padding: 0px;
+  margin: 4px;
+  width: 92px;
+  border-radius: 24px;
+  float:left;
+  text-align: center;
+  background-image: linear-gradient(180deg,#ffffff9f 0%, #3884ff60 100%);
+}
+
+img {
+  border-color: black;
+  border: 2px solid black;
 }
